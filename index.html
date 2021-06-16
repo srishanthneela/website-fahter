@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<!-- Designined by CodingLab | www.youtube.com/codinglabyt -->
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <!--<title> Responsiive Admin Dashboard | CodingLab </title>-->
+    <link rel="stylesheet" href="style.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="logo-details">
+            <i class='bx bxl-c-plus-plus'></i>
+            <span class="logo_name">ATS Software</span>
+        </div>
+        <ul class="nav-links">
+            <li>
+                <button class="tablinks" onclick="openCity(event, 'dashboard')">
+                    <i class='bx bx-grid-alt'></i>
+                    <span class="links_name">Dashboard</span>
+                </button>
+                <button class="tablinks" onclick="openCity(event, 'client-information')" id="defaultOpen">
+                    <i class="far fa-clipboard"></i>
+                    <span class="links_name">client information</span>
+                </button>
+                <button class="tablinks" onclick="openCity(event, 'draft-form')">
+                    <i class="fas fa-archive"></i>
+                    <span class="links_name">drafts / forms</span>
+                </button>
+                <button class="tablinks" onclick="openCity(event, 'additional-information')">
+                    <i class='far fa-file-alt'></i>
+                    <span class="links_name">additional information</span>
+                </button>
+                <button class="tablinks" onclick="openCity(event, 'cost-mens-finance')">
+                    <i class='far fa-file'></i>
+                    <span class="links_name">cost & means of finance</span>
+                </button>
+                <button class="tablinks" onclick="openCity(event, 'auditor')">
+                    <i class='bx bx-grid-alt'></i>
+                    <span class="links_name">auditor</span>
+                </button>
+                <button class="tablinks" onclick="openCity(event, 'existing ')">
+                    <i class='bx bx-grid-alt'></i>
+                    <span class="links_name">existing loans form 1</span>
+                </button>
+                <button class="tablinks" onclick="openCity(event, 'installed')">
+                    <i class='bx bx-grid-alt'></i>
+                    <span class="links_name">installed capacity</span>
+                </button>
+                <button class="tablinks" onclick="openCity(event, 'holding')">
+                    <i class='bx bx-grid-alt'></i>
+                    <span class="links_name">holding capacity</span>
+                </button>
+                <button class="tablinks" onclick="openCity(event, 'allocation')">
+                    <i class='bx bx-grid-alt'></i>
+                    <span class="links_name">allocation ratio</span>
+                </button>
+                <button class="tablinks" onclick="openCity(event, 'profit-loss')">
+                    <i class='fas fa-dollar-sign'></i>
+                    <span class="links_name">trading profit & loss</span>
+                </button>
+                <button class="tablinks" onclick="openCity(event, 'interest')">
+                    <i class='bx bx-grid-alt'></i>
+                    <span class="links_name">interest</span>
+                </button>
+                <button class="tablinks" onclick="openCity(event, 'depreciation')">
+                    <i class='bx bx-grid-alt'></i>
+                    <span class="links_name">depreciation</span>
+                </button>
+                <button class="tablinks" onclick="openCity(event, 'balance')">
+                    <i class='fas fa-file-invoice'></i>
+                    <span class="links_name">balance sheet</span>
+                </button>
+                <button class="tablinks" onclick="openCity(event, 'capital')">
+                    <i class='bx bx-grid-alt'></i>
+                    <span class="links_name">capital account</span>
+                </button>
+            </li>
+        </ul>
+    </div>
+    <section class="home-section">
+
+        <nav>
+            <div class="sidebar-button">
+                <i class='bx bx-menu sidebarBtn'></i>
+                <table>
+                <tr>
+                    <td><a href="">CRM</a></td>
+                    <td><a href="">PAY</a></td>
+                    <td><a href="">ROC</a></td>
+                    <td><a href="">CRM</a></td>
+                </tr>
+                <tr>
+                    <td><a href="">ACC</a></td>
+                    <td><a href="">GST</a></td>
+                    <td><a href="">TDS</a></td>
+                    <td><a href="">TAX</a></td>
+                </tr>
+            </table>
+            <select>
+                <option value="CRM">CRM</option>
+            </select>
+            <select>
+                <option>2020-2021</option>
+                <option>2019-2020</option>
+                <option>218-2019</option>
+                <option>2017-2018</option>
+                <option>2016-2017</option>
+            </select>   
+            <div class="header-right">
+            <ul class="links">
+                <li><a href=""><i class="fas fa-file-invoice"></i></a></li>
+                <li><a href=""><i class="fas fa-video"></i></a></li>
+                <li><a href=""><i class="far fa-question-circle"></i></a></li>
+            </ul>
+            
+            <div class="time"  onLoad="initClock()">
+                <body onLoad="initClock()">
+                <div id="timedate">
+                    <div class="day">
+                    <a id="mon">January</a>
+                    <a id="d">1</a>
+                    <a id="y"   >0</a><br/>
+                    </div>
+                    <a id="h">12</a> :
+                    <a id="m">00</a>
+                    <a id="s" style="display: none;">00</a>
+                    <a id="mi" style="display: none;">000</a>
+                </div>
+                </body>
+            </div>
+            <span class="slide">
+                <a href="#" onclick="openSlideMenu()"><i class="fas fa-bars"></i></a>
+            </span>
+            <div class="notification_wrap">
+                <div class="notification_icon">
+                    <i class="far fa-bell"></i>
+                </div>
+                <div class="dropdown">
+                    <div class="notify_item">
+                        <div class="notify_img">
+                            <img src="images/user1.png" alt="profile_pic" style="width: 50px">
+                        </div>
+                        <div class="notify_info">
+                            <p>Alex commented on<span>Timeline Share</span><span class="notify_time">10 min ago</span></p>
+                        </div>
+                    </div>
+                    <div class="notify_item">
+                        <div class="notify_img">
+                            <img src="images/user2.png" alt="profile_pic" style="width: 50px">
+                        </div>
+                        <div class="notify_info">
+                            <p>Ben hur commented on your<span>Timeline Share</span><span class="notify_time">55 min ago</span></p>
+                        </div>
+                    </div>
+                    <div class="notify_item">
+                        <div class="notify_img">
+                            <img src="images/user3.png" alt="profile_pic" style="width: 50px">
+                        </div>
+                        <div class="notify_info">
+                            <p>Meryn trant liked your<span>Cover Picture</span><span class="notify_time">2 hors ago</span></p>
+                        </div>
+                    </div>
+                    <div class="notify_item">
+                        <div class="notify_img">
+                            <img src="images/user4.png" alt="profile_pic" style="width: 50px">
+                        </div>
+                        <div class="notify_info">
+                            <p>John wick commented on your<span>Profile Picture</span><span class="notify_time">6 hors ago</span></p>
+                        </div>
+                   </div>
+                                       <div class="notify_item">
+                        <div class="notify_img">
+                            <img src="images/user1.png" alt="profile_pic" style="width: 50px">
+                        </div>
+                        <div class="notify_info">
+                            <p>Alex commented on<span>Timeline Share</span><span class="notify_time">10 min ago</span></p>
+                        </div>
+                    </div>
+                    <div class="notify_item">
+                        <div class="notify_img">
+                            <img src="images/user2.png" alt="profile_pic" style="width: 50px">
+                        </div>
+                        <div class="notify_info">
+                            <p>Ben hur commented on your<span>Timeline Share</span><span class="notify_time">55 min ago</span></p>
+                        </div>
+                    </div>
+                    <div class="notify_item">
+                        <div class="notify_img">
+                            <img src="images/user3.png" alt="profile_pic" style="width: 50px">
+                        </div>
+                        <div class="notify_info">
+                            <p>Meryn trant liked your<span>Cover Picture</span><span class="notify_time">2 hors ago</span></p>
+                        </div>
+                    </div>
+                    <div class="notify_item">
+                        <div class="notify_img">
+                            <img src="images/user4.png" alt="profile_pic" style="width: 50px">
+                        </div>
+                        <div class="notify_info">
+                            <p>John wick commented on your<span>Profile Picture</span><span class="notify_time">6 hors ago</span></p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            </div>
+        </nav><br><br>
+        <div class="profile-box">
+            <img src="./images/user1.png" alt="">
+            <table id="panel-table">
+                <tr>
+                    <td>1234567 / s2895</td>
+                    <td>shiva prasad</td>
+                    <td>HNO. 11-15-37/1, ROAD NO. 1, DOCTORS</td>
+                    <td>N SHIVA PRASAD AND CO ( 36AEHPN1234N1ZH )</td>
+                    <td>9346313872, 9014474499</td>
+                </tr>
+                <tr>
+                    <td>HYDERABAD</td>
+                    <td>YOGANANDAM NEELA</td>
+                    <td>COLONY, SAORORNAGAR, HYDERABAD</td>
+                    <td>HNO. 11-15-37/1 ROAD NO. 1, DOCTORS COLONY,</td>
+                    <td>shivataxconsultants@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>REGULAR OFFICE FILE / SHIVA</td>
+                    <td>16-07-1978</td>
+                    <td>AEHPN1234N</td>
+                    <td>KV RANGA REDDY DIST,</td>
+                    <td>SAROORNAGAR, HYDERABAD, KV RANGA REDDY DIST,</td>
+                </tr>
+                <tr>
+                    <td>CHANDRASHEKAR POTTABHATNI</td>
+                    <td>123456789</td>
+                    <td>TELANGANA, INDIA, 500035</td>
+                    <td>TELANGANA, INDIA, 500035</td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+
+
+        <div id="client-information" class="tabcontent">
+
+            <button class="accordion">Group information</button>
+            <div class="panel">
+                <table>
+                    <tr>
+                        <td>sl.no</td>
+                        <td>file no</td>
+                        <td>f</td>
+                    </tr>
+                </table>
+            </div>
+
+            <button class="accordion">personal Information</button>
+            <div class="panel">
+                <table id="panel-table">
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>Name</td>
+                        <td>Middle name</td>
+                        <td>surname</td>
+                        <td>DOB</td>
+                    </tr>
+                    <tr>
+                        <th>client name</th>
+                        <td>mr</td>
+                        <td><input class="text-input" type="text"></td>
+                        <td><input class="text-input" type="text"></td>
+                        <td><input class="text-input" type="text"></td>
+                        <td><input type="date"></td>
+                    </tr>
+                    <tr>
+                        <th>father name</th>
+                        <td>mr</td>
+                        <td><input class="text-input" type="text"></td>
+                        <td><input class="text-input" type="text"></td>
+                        <td><input class="text-input" type="text"></td>
+                        <td><input type="date"></td>
+                    </tr>
+                    <tr>
+                        <th>mother name</th>
+                        <td>mrs</td>
+                        <td><input class="text-input" type="text"></td>
+                        <td><input class="text-input" type="text"></td>
+                        <td><input class="text-input" type="text"></td>
+                        <td><input type="date"></td>
+                    </tr>
+                    <tr>
+                        <th>spouse name</th>
+                        <td>mrs</td>
+                        <td><input class="text-input" type="text"></td>
+                        <td><input class="text-input" type="text"></td>
+                        <td><input class="text-input" type="text"></td>
+                        <td><input type="date"></td>
+                    </tr>
+                    <tr>
+                        <th>nationality</th>
+                        <td></td>
+                        <td><input class="text-input" type="text"></td>
+                        <th>education</th>
+                        <td><input class="text-input" type="text"></td>
+                        <td><input class="text-input" type="text"></td>
+                    </tr>
+                    <tr>
+                        <th>relegon</th>
+                        <td></td>
+                        <td><input class="text-input" type="text"></td>
+                        <th>occupation</th>
+                        <td><input class="text-input" type="text"></td>
+                        <td><input class="text-input" type="text"></td>
+                    </tr>
+                </table>
+                <table id="panel-table">
+                    <tr>
+                        <td>pan</td>
+                        <td><input class="text-input" type="text"></td>
+                        <td>DOB</td>
+                        <td>name</td>
+                        <td>father name</td>
+                        <td>passport</td>
+                        <td><input class="text-input" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>Tan</td>
+                        <td><input class="text-input" type="text"></td>
+                        <td><input class="text-input" type="text"></td>
+                        <td><input class="text-input" type="text"></td>
+                        <td><input class="text-input" type="text"></td>
+                        <td>family card</td>
+                        <td><input class="text-input" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>Din</td>
+                        <td><input class="text-input" type="text"></td>
+                        <td><input class="text-input" type="text"></td>
+                        <td><input class="text-input" type="text"></td>
+                        <td><input class="text-input" type="text"></td>
+                        <td>driving license</td>
+                        <td><input class="text-input" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>aadhar</td>
+                        <td><input class="text-input" type="text"></td>
+                        <td><input class="text-input" type="text"></td>
+                        <td><input class="text-input" type="text"></td>
+                        <td><input class="text-input" type="text"></td>
+                        <td>voter id</td>
+                        <td><input class="text-input" type="text"></td>
+                    </tr>
+                </table>
+            </div>
+
+            <button class="accordion">communication</button>
+            <div class="panel">
+                <table id="panel-table">
+                    <tr>
+                        <td>mobile no</td>
+                        <td><input class="text-input" type="text"></td>
+                        <td>land no</td>
+                        <td><input class="text-input" type="text" placeholder="optional"></td>
+                    </tr>
+                    <tr>
+                        <td>email </td>
+                        <td><input class="text-input" type="text"></td>
+                        <td>website</td>
+                        <td><input class="text-input" type="text" placeholder="optional"></td>
+                    </tr>
+                </table>
+            </div>
+
+            <button class="accordion">residential address</button>
+            <div class="panel">
+                <table id="panel-table">
+                    <td  style="width: 10%;">name of add</td> 
+                    <td><input class="text-input"type="text"></td>
+                </table>
+                <table id="panel-table">
+                    <tr>
+                        <td>owned / lease</td>
+                        <td><input class="text-input" type="text"></td>
+                        <td>active / inactive</td>
+                        <td><input class="text-input" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>pin no</td>
+                        <td><input class="text-input" type="text"></td>
+                        <td>country</td>
+                        <td><input class="text-input" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>state</td>
+                        <td><input class="text-input" type="text"></td>
+                        <td>district</td>
+                        <td><input class="text-input" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>hno, fno, sy no</td>
+                        <td><input class="text-input" type="text"></td>
+                        <td>country</td>
+                        <td><input class="text-input" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>street area</td>
+                        <td><input class="text-input" type="text"></td>
+                        <td>land mark</td>
+                        <td><input class="text-input" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>post office</td>
+                        <td><input class="text-input" type="text"></td>
+                        <td>city / town</td>
+                        <td><input class="text-input" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>owned name</td>
+                        <td><input class="text-input" type="text"></td>
+                        <td>father name</td>
+                        <td><input class="text-input" type="text"></td>
+                    </tr>
+                </table>
+                <table id="panel-table">
+                    <tr>
+                        <td style="width: 10%;">address</td>
+                        <td><input class="text-input" type="text"></td>
+                    </tr>
+                </table>
+            </div>
+
+            <button class="accordion">business address</button>
+            <div class="panel">
+                <table id="panel-table">
+                    <td style="width: 10%;">business name</td>
+                    <td><input class="text-input" type="text"></td>
+                </table>
+                <table id="panel-table">
+                    <tr>
+                        <td style="width: 10%;">GSTN</td>
+                        <td><input class="text-input" type="text"></td>
+                        <td style="width: 10%;">GSTN Status</td>
+                        <td><input type="date"></td>
+                        <td><input class="text-input" type="text" placeholder="active / inactive"></td>
+                    </tr>
+                </table>
+                <table id="panel-table">
+                    <tr> 
+                        <td>add status</td>
+                        <td><input class="text-input" type="text"></td>
+                        <td>active / inactive</td>
+                        <td><input class="text-input" type="text" placeholder="active / inactive"></td>
+                    </tr>
+                    <tr>
+                        <td>owned / lease</td>
+                        <td><input class="text-input" type="text"></td>
+                        <td>lease date</td>
+                        <td><input class="text-input" type="date"></td>
+                    </tr>
+                    <tr>
+                        <td>pin no</td>
+                        <td><input class="text-input" type="text"></td>
+                        <td>country</td>
+                        <td><input class="text-input" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>state</td>
+                        <td><input class="text-input" type="text"></td>
+                        <td>district</td>
+                        <td><input class="text-input" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>hon, fno, sy no</td>
+                        <td><input class="text-input" type="text"></td>
+                        <td>country</td>
+                        <td><input class="text-input" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>street, area</td>
+                        <td><input class="text-input" type="text"></td>
+                        <td>land mark</td>
+                        <td><input class="text-input" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>post office</td>
+                        <td><input class="text-input" type="text"></td>
+                        <td>city / town</td>
+                        <td><input class="text-input" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>owner nae</td>
+                        <td><input class="text-input" type="text"></td>
+                        <td>father name</td>
+                        <td><input class="text-input" type="text"></td>
+                    </tr>
+                </table>
+                <table id="panel-table">
+                    <td style="width: 10%;">address</td>
+                    <td><input class="text-input" type="text"></td>
+                </table>
+                <table id="panel-table">
+                    <tr>
+                        <td>police station name</td>
+                        <td><input class="text-input" type="text"></td>
+                        <td>station area</td>
+                        <td><input class="text-input" type="text"></td>
+                    </tr>
+                </table>
+                <table id="panel-table" >
+                    <td style="width: 10%;">address</td>
+                    <td><input class="text-input"type="text"></td>
+                </table>
+            </div>
+
+            <button class="accordion">bank account</button>
+            <div class="panel">
+                <table id="panel-table">
+                    <tr>
+                        <td>account type</td>
+                        <td>current / saving</td>
+                        <td>nri / nro</td>
+                        <td>active /inactive</td>
+                    </tr>
+                    <tr>
+                        <td>nri / nro</td>
+                        <td>nri / nro</td>
+                        <td>mobile app no</td>
+                        <td><input class="text-input" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>IFSC / BSR / MICR</td>
+                        <td><input class="text-input" type="text" placeholder="IFSC"></td>
+                        <td><input class="text-input" type="text" placeholder="BSR"></td>
+                        <td><input class="text-input" type="text" placeholder="MICR"></td>
+                    </tr>
+                </table>
+                <table id="panel-table">
+                    <td style="width: 10%;">acc no. & bank</td>
+                    <td><input class="text-input" type="text" placeholder="acc no."></td>
+                    <td><input class="text-input" type="text" placeholder="bank name"></td>
+                </table>
+                <table id="panel-table">
+                    <td style="width: 15%;">bank & branch name</td>
+                    <td><input class="text-input" type="text" placeholder="address of the bank"></td>
+                </table>
+            </div>
+
+            <button class="accordion">partnership firms</button>
+            <div class="panel">
+                <table id="panel-table">
+                    <tr>
+                        <td>SI no. / fno. a / i</td>
+                        <td><input class="text-input" type="text"></td>
+                        <td>first name</td>
+                        <td><input class="text-input" type="text"></td>
+                        <td>pin / country</td>
+                        <td><input class="text-input" type="text"></td>
+                    </tr>
+                </table>
+                <table id="panel-table">
+                    <tr>
+                        <td>branch</td>
+                        <td><input class="text-input" type="text"></td>
+                        <td>CIN no</td>
+                        <td><input class="text-input" type="text"></td>
+                        <td>regn office</td>
+                        <td><input class="text-input" type="text"></td>
+                        <td>state / district</td>
+                        <td><input class="text-input" type="text"></td>
+                        </tr>
+                    <tr>
+                        <td>group</td>
+                        <td><input class="text-input" type="text"></td>
+                        <td>DOI & pan tan</td>
+                        <td><input class="text-input" type="text"></td>
+                        <td>loss share</td>
+                        <td><input class="text-input" type="text"></td>
+                        <td>address</td>
+                        <td><input class="text-input" type="text"></td>
+                    </tr>
+                </table>
+                <table id="panel-table">
+                    <td style="width: 10%;">employee</td>
+                    <td><input class="text-input" type="text"></td>
+                    <td style="width: 10%;">president</td>
+                    <td><input class="text-input" type="text"></td>
+                </table>
+            </div>
+
+            <button class="accordion">company</button>
+            <div class="panel">
+                <table id="panel-table">
+                    <tr>
+                        <td>SI no. / fno. a / i</td>
+                        <td><input class="text-input" type="text"></td>
+                        <td>company name</td>
+                        <td><input class="text-input" type="text"></td>
+                        <td>pin / country</td>
+                        <td><input class="text-input" type="text"></td>
+                    </tr>
+                </table>
+                <table id="panel-table">
+                    <tr>
+                        <td>branch</td>
+                        <td><input class="text-input" type="text"></td>
+                        <td>CIN no</td>
+                        <td><input class="text-input" type="text"></td>
+                        <td>regn office</td>
+                        <td><input class="text-input" type="text"></td>
+                        <td>state / district</td>
+                        <td><input class="text-input" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>group</td>
+                        <td><input class="text-input" type="text"></td>
+                        <td>DOI & pan tan</td>
+                        <td><input class="text-input" type="text"></td>
+                        <td>loss share</td>
+                        <td><input class="text-input" type="text"></td>
+                        <td>address</td>
+                        <td><input class="text-input" type="text"></td>
+                    </tr>
+                </table>
+                <table id="panel-table">
+                    <td style="width: 10%;">employee</td>
+                    <td><input class="text-input" type="text"></td>
+                    <td style="width: 12%;">managing director</td>
+                    <td><input class="text-input" type="text"></td>
+                </table>
+            </div>
+
+            <button class="accordion">true & society</button>
+            <div class="panel">
+                <table id="panel-table">
+                    <tr>
+                        <td>SI no. / fno. a / i</td>
+                        <td><input class="text-input" type="text"></td>
+                        <td>true / society</td>
+                        <td><input class="text-input" type="text"></td>
+                        <td>pin / country</td>
+                        <td><input class="text-input" type="text"></td>
+                    </tr>
+                </table>
+                <table id="panel-table">
+                    <tr>
+                        <td>branch</td>
+                        <td><input class="text-input" type="text"></td>
+                        <td>CIN no</td>
+                        <td><input class="text-input" type="text"></td>
+                        <td>regn office</td>
+                        <td><input class="text-input" type="text"></td>
+                        <td>state / district</td>
+                        <td><input class="text-input" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>group</td>
+                        <td><input class="text-input" type="text"></td>
+                        <td>DOI & pan tan</td>
+                        <td><input class="text-input" type="text"></td>
+                        <td>loss share</td>
+                        <td><input class="text-input" type="text"></td>
+                        <td>address</td>
+                        <td><input class="text-input" type="text"></td>
+                    </tr>
+                </table>
+                <table id="panel-table">
+                    <td style="width: 10%;">employee</td>
+                    <td><input class="text-input" type="text"></td>
+                    <td style="width: 10%;">president</td>
+                    <td><input class="text-input" type="text"></td>
+                </table>
+            </div>
+
+        </div>
+
+        <div class="sidebar-right">
+            <div id="menu" class="nav">
+                <a href="#" class="close" onclick="closeSlideMenu()"><i class="fas fa-times"></i></a>
+                <div class="tabs-top">
+                    <div class="tabs">
+                        <div class="tab-header">
+                            <div class="active">
+                            <i class="fas fa-th-list"></i>
+                            </div>
+                            <div>
+                            <i class="fas fa-comment-alt"></i>
+                            </div>
+                        </div>
+                        <div class="tab-indicator"></div>
+                        <div class="tab-body">
+                            <div class="active">
+                            <div class="inputField">
+                                <input type="text" placeholder="Add your new todo">
+                                <button><i class="fas fa-plus"></i></button>
+                                </div>
+                                <ul class="todoList">
+                                <!-- data are comes from local storage -->
+                                </ul>
+                                <div class="footer">
+                                <span><span class="pendingTasks" style="display: none;"></span> pending tasks</span>
+                                <button>Clear All</button>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+    </section>
+        <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="./script.js"></script>
+
+</body>
+
+</html>
